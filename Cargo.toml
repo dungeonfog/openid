@@ -31,6 +31,7 @@ base64 = '0.13'
 biscuit = '0.4'
 failure = '0.1'
 validator = { version = '0.11', features = ["derive"] }
+log = "0.4"
 
 [dependencies.url]
 version = '2'

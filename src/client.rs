@@ -483,6 +483,8 @@ where
             .json::<Value>()
             .await?;
 
+        log::debug!("json response: {:?}", json);
+
         let error: Result<OAuth2Error, _> = serde_json::from_value(json.clone());
 
         if let Ok(error) = error {
@@ -515,6 +517,8 @@ where
         };
 
         let json = self.post_token(body).await?;
+        log::debug!("json response: {:?}", json);
+
         let token: Bearer = serde_json::from_value(json)?;
         Ok(token)
     }
